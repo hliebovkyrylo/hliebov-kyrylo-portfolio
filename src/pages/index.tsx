@@ -4,7 +4,7 @@ import { SocialLink } from "@/components/Link";
 
 export default function Home() {
   return (
-    <div className="flex justify-center absolute inset-0 h-full w-full bg-[#0A0A0A] bg-[linear-gradient(to_right,#0F0F10_1px,transparent_1px),linear-gradient(to_bottom,#0F0F10_1px,transparent_1px)] bg-[size:24px_24px]">
+    <div className="flex justify-center inset-0 min-h-screen w-full bg-[#0A0A0A] bg-[linear-gradient(to_right,#0F0F10_1px,transparent_1px),linear-gradient(to_bottom,#0F0F10_1px,transparent_1px)] bg-[size:24px_24px]">
       <Layout>
         <div className="flex flex-col gap-6">
           <Section
@@ -28,8 +28,7 @@ export default function Home() {
           />
           <Section
             title="Education"
-            description={`
-              I am a 2nd year student majoring in "Computer Engineering" at Oles Honchar Dnipro National University.
+            description={`I am a 2nd year student majoring in "Computer Engineering" at Oles Honchar Dnipro National University.
               Specialization prepares specialists to solve the following tasks, such as the development of programs on object-oriented, logical, functional
               programming languages: C, C++, C#, Java, development of web applications based on HTML, CSS, JavaScript, ASP.NET and
               others, design and development of expert and intelligent systems.
@@ -40,7 +39,7 @@ export default function Home() {
             description={`HTML5, CSS3, Scss(Sass), Tailwindcss, JavaScript, TypeScript, React, Next.js, Node JS, Express, NestJS, Fastify, Mongodb, PostgreSQL, Docker`}
           />
           <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700" />
-          <div className="flex gap-3">
+          <div className="flex flex-col mb-6 sm:mb-0 sm:flex-row gap-3">
             <SocialLink title="Telegram" url="https://t.me/xenoniiii" />
             <SocialLink title="GitHub" url="https://github.com/hliebovkyrylo" />
             <SocialLink
