@@ -4,7 +4,7 @@ import { SocialLink } from "@/components/Link";
 
 export default function Home() {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center absolute inset-0 h-full w-full bg-[#0A0A0A] bg-[linear-gradient(to_right,#0F0F10_1px,transparent_1px),linear-gradient(to_bottom,#0F0F10_1px,transparent_1px)] bg-[size:24px_24px]">
       <Layout>
         <div className="flex flex-col gap-6">
           <Section
@@ -43,8 +43,14 @@ export default function Home() {
           <div className="flex gap-3">
             <SocialLink title="Telegram" url="https://t.me/xenoniiii" />
             <SocialLink title="GitHub" url="https://github.com/hliebovkyrylo" />
-            <SocialLink title="Linkedin" url="https://www.linkedin.com/in/kyrylo-hliebov-a5055926a/" />
-            <SocialLink title="Instagram" url="https://www.instagram.com/xenoniiii/" />
+            <SocialLink
+              title="Linkedin"
+              url="https://www.linkedin.com/in/kyrylo-hliebov-a5055926a/"
+            />
+            <SocialLink
+              title="Instagram"
+              url="https://www.instagram.com/xenoniiii/"
+            />
           </div>
         </div>
       </Layout>
