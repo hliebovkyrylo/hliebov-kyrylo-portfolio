@@ -40,14 +40,7 @@ export default function Home() {
               expanding your skills and deepening your industry knowledge
               programming.
               
-              In my work, I apply the key principles of client-server architecture,
-              in particular, SOLID, KISS, DRY, REST, which allow you to create flexible,
-              effective and scalable solutions. I have object-oriented
-              programming, I have a good understanding of API concepts and have practical experience
-              developments to ensure interaction between clients and servers.
-              I am constantly working on improving my skills and mastering new ones
-              technologies to create products that solve real problems and are
-              useful for users.
+              In development, I adhere to the principles of clean code (SOLID, KISS, DRY) and use modern architectural approaches, including REST API and client-server architecture. This allows for scalable and easily maintainable solutions to build products that solve real user problems.
             `}
             />
             <Section
