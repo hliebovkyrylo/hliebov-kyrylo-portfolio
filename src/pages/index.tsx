@@ -53,7 +53,7 @@ export default function Home() {
             />
             <Section
               title="Skills"
-              description={`HTML5, CSS3, Scss(Sass), Tailwindcss, JavaScript, TypeScript, React, Next.js, Node JS, Express, NestJS, Fastify, Mongodb, PostgreSQL, Docker`}
+              description={`HTML5, CSS3, Scss(Sass), Tailwindcss, JavaScript, TypeScript, React, Next.js, Node JS, Express, NestJS, Fastify, Mongodb, PostgreSQL, Docker, Redux, Redux toolkit, TanStack Query`}
             />
             <hr className="h-px bg-slate-400 border-0 dark:bg-gray-700" />
             <div className="flex flex-col mb-6 sm:mb-0 sm:flex-row gap-3">
