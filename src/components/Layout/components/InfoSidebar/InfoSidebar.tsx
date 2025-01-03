@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SectionLink } from "./components";
+import { BiLogoGithub, BiLogoInstagram, BiLogoLinkedin, BiLogoTelegram } from "react-icons/bi";
 
 interface InfoSidebarProps {
   name: string;
@@ -23,11 +24,11 @@ export const InfoSidebar = ({
   currentSection,
 }: InfoSidebarProps) => {
   return (
-    <aside className="flex flex-col justify-between h-full p-5">
-      <div>
+    <aside className="sticky flex flex-col justify-between h-full p-5">
+      <div className="flex flex-col w-56">
         <h1 className="text-3xl font-bold">{name}</h1>
         <h2 className="text-lg">{jobTitle}</h2>
-        <p className="text-base font-extralight">{description}</p>
+        <p className="text-base font-extralight text-slate-300">{description}</p>
       </div>
       <div className="flex gap-1 flex-col">
         <SectionLink
@@ -43,11 +44,11 @@ export const InfoSidebar = ({
           isCurrent={currentSection === "PROJECTS"}
         />
       </div>
-      <div>
-        <Link href={gitHubHref}>Git</Link>
-        <Link href={tgHref}>Rg</Link>
-        <Link href={instHref}>Inst</Link>
-        <Link href={linkedInHref}>LinkedIn</Link>
+      <div className="flex items-center gap-2">
+        <Link href={gitHubHref}>{<BiLogoGithub className="w-5 h-5" />}</Link>
+        <Link href={tgHref}>{<BiLogoTelegram className="w-5 h-5" />}</Link>
+        <Link href={instHref}><BiLogoInstagram className="w-5 h-5" /></Link>
+        <Link href={linkedInHref}><BiLogoLinkedin className="w-5 h-5" /></Link>
       </div>
     </aside>
   );

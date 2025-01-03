@@ -15,7 +15,7 @@ export const SectionLink = ({ sectionName, isCurrent }: SectionLinkProps) => {
       />
       <Link
         className={`block ${!isCurrent && " text-slate-400"}`}
-        href={sectionName === "ABOUT" ? "/" : sectionName.toLowerCase()}
+        href={`#${sectionName.toLowerCase()}`}
       >
         {sectionName}
       </Link>

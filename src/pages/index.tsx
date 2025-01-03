@@ -1,15 +1,8 @@
+import { EducationSection } from "@/components/EducationSection";
 import { Layout } from "@/components/Layout";
-import { useTheme } from "next-themes";
-import { AiOutlineMoon, AiOutlineSun } from "react-icons/ai";
 import Head from "next/head";
-import { InfoSidebar } from "@/components/InfoSidebar";
 
 export default function Home() {
-  const { theme, setTheme } = useTheme();
-
-  const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-  };
   return (
     <>
       <Head>
@@ -20,31 +13,32 @@ export default function Home() {
           content="This is website with info about me :)"
         />
       </Head>
-      <div className="flex justify-center inset-0 min-h-screen w-full bg-slate-900">
-        <button
-          onClick={toggleTheme}
-          className="absolute top-4 right-8 w-6 h-6"
-        >
-          {theme === "dark" ? (
-            <AiOutlineSun className="w-full h-full" />
-          ) : (
-            <AiOutlineMoon className="w-full h-full" />
-          )}
-        </button>
-        <Layout>
-          <InfoSidebar
-            name="Hliebov Kyrylo"
-            jobTitle="Front-End Engineer"
-            description="Ya tipa eee ny da"
-            instHref="https://instagram.com/xenoniiii/"
-            tgHref="https://t.me/kyrylohliebov"
-            linkedInHref="https://www.linkedin.com/in/kyrylo-hliebov-a5055926a/"
-            gitHubHref="https://github.com/hliebovkyrylo"
-            currentSection="ABOUT"
-          />
-          <div className="h-[100px]"></div>
-        </Layout>
-      </div>
+      <Layout>
+        <section id="about">
+          I, Kyrylo Hlebov, a 2nd-year student at the Dnipro National University
+          Oles Honchar University, where I am studying for a specialty "Computer
+          engineering" (specialty code — 123). I am 18 years old, and since the
+          fall In 2022, I am actively engaged in web application development,
+          all the time expanding your skills and deepening your industry
+          knowledge programming. In development, I adhere to the principles of
+          clean code (SOLID, KISS, DRY) and use modern architectural approaches,
+          including REST API and client-server architecture. This allows for
+          scalable and easily maintainable solutions to build products that
+          solve real user problems.
+        </section>
+        <hr className="h-px my-8 border-0 bg-gray-700" />
+        <EducationSection
+          years="2023-2027"
+          name="Oles Honchar Dnipro National University"
+          specialization="Computer engineering"
+          description="Specialization prepares specialists to solve the following tasks, such
+            as the development of programs on object-oriented, logical, functional
+            programming languages: C, C++, C#, Java, development of web applications
+            based on HTML, CSS, JavaScript, ASP.NET and others, design and
+            development of expert and intelligent systems."
+        />
+        <hr className="h-px my-8 border-0 bg-gray-700" />
+      </Layout>
     </>
   );
 }
