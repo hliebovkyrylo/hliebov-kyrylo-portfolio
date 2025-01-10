@@ -13,9 +13,8 @@ export const Layout = ({ children }: { children: ReactNode }) => {
           tgHref="https://t.me/kyrylohliebov"
           linkedInHref="https://www.linkedin.com/in/kyrylo-hliebov-a5055926a/"
           gitHubHref="https://github.com/hliebovkyrylo"
-          currentSection="ABOUT"
         />
-        <div className="p-5">
+        <div className="p-6">
         {children}
         </div>
       </main>

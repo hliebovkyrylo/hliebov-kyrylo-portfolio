@@ -1,18 +1,18 @@
-interface EducationSectionProps {
+interface EducationProps {
   years: string;
   name: string;
   specialization: string;
   description: string;
 }
 
-export const EducationSection = ({
+export const Education = ({
   years,
   name,
   specialization,
   description,
-}: EducationSectionProps) => {
+}: EducationProps) => {
   return (
-    <section id="education" className="w-full bg-slate-800 rounded-lg p-2">
+    <div className="w-full bg-slate-800 rounded-lg p-2">
       <p className="bg-slate-600 inline-block p-1 rounded-md text-sm">
         {years}
       </p>
@@ -22,6 +22,6 @@ export const EducationSection = ({
         <p>{specialization}</p>
       </div>
       <p>{description}</p>
-    </section>
+    </div>
   );
 };

@@ -1,4 +1,3 @@
-// components/Cursor.js
 import { useEffect, useState } from "react";
 
 export const Cursor = () => {
