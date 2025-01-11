@@ -14,7 +14,7 @@ export const SignInForm = () => {
           type="password"
           placeholder="Password"
         />
-        <button className="h-11 bg-emerald-600 rounded-lg">Sign In</button>
+        <button className="h-11 bg-emerald-600 hover:bg-emerald-700 rounded-lg transition duration-300 ease-in-out">Sign In</button>
       </form>
       <span>If you not admin, please back to</span>
       <Link href={"/"} className="ml-1 hover:underline text-emerald-600">

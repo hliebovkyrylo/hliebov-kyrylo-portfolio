@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { Skill } from "./components/Skill";
+import Link from "next/link";
+import { BiLinkExternal } from "react-icons/bi";
 
 export const Project = () => {
   return (
@@ -12,7 +14,12 @@ export const Project = () => {
         className="w-32 h-32 object-cover rounded-lg"
       />
       <div>
-        <p className="font-bold text-lg">Culinarybook</p>
+        <div className="flex justify-between items-center">
+          <p className="font-bold text-lg">Culinarybook</p>
+          <Link href={"/sdfg"}>
+            <BiLinkExternal />
+          </Link>
+        </div>
         <p className="my-3">
           A social network for recipes that allows users to receive personalized
           recommendations based on their preferences. In this project, I am
