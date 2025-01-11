@@ -8,7 +8,7 @@ export const AdminLayout = ({ children }: { children: ReactNode }) => {
 
   return (
     <div className="flex gap-6">
-      <aside className="flex flex-col gap-1 p-3 w-64 bg-slate-800 h-screen">
+      <aside className="flex sticky top-0 flex-col gap-1 p-3 w-64 bg-slate-800 h-screen">
         {links.map((link) => (
           <Link
             key={link.href}
@@ -24,7 +24,7 @@ export const AdminLayout = ({ children }: { children: ReactNode }) => {
           Logout
         </button>
       </aside>
-      <div className="py-6 w-full">{children}</div>
+      <div className="py-6 px-6 w-full">{children}</div>
     </div>
   );
 };

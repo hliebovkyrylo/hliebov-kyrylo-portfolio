@@ -14,9 +14,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
           linkedInHref="https://www.linkedin.com/in/kyrylo-hliebov-a5055926a/"
           gitHubHref="https://github.com/hliebovkyrylo"
         />
-        <div className="p-6">
-        {children}
-        </div>
+        <div className="p-6">{children}</div>
       </main>
     </div>
   );
