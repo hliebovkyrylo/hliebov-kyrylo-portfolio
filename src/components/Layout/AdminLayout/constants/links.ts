@@ -8,7 +8,7 @@ export const links = [
     label: "Projects",
   },
   {
-    href: "/admin/education",
-    label: "Education",
+    href: "/admin/educations",
+    label: "Educations",
   },
 ];

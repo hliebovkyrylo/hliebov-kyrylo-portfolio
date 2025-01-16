@@ -10,7 +10,7 @@ interface ProjectProps {
 export const Project = ({ id, name, imageUrl }: ProjectProps) => {
   return (
     <Link
-      href={`/update-project/${id}`}
+      href={`/admin/update-project/${id}`}
       className="bg-slate-800 rounded-xl hover:bg-slate-700 transition duration-500 ease-in-out"
     >
       <Image
@@ -20,7 +20,7 @@ export const Project = ({ id, name, imageUrl }: ProjectProps) => {
         height={100}
         className="w-full h-52 object-cover"
       />
-      <p className="py-3 px-2">{name}</p>
+      <p className="py-3 px-2 truncates">{name}</p>
     </Link>
   );
 };
