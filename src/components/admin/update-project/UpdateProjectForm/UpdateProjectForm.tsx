@@ -1,8 +1,8 @@
 import { BiImage } from "react-icons/bi";
-import { TagsInput } from "../../shared";
 import { useSelectImage } from "../../shared/hooks";
+import { TagsInput } from "../../shared";
 
-export const CreateProjectForm = () => {
+export const UpdateProjectForm = () => {
   const {
     handleFileChange,
     handleFileInputClick,
@@ -26,11 +26,14 @@ export const CreateProjectForm = () => {
         className="flex justify-center items-center bg-slate-600 hover:bg-slate-500 h-96 w-96 rounded-xl transition duration-300 ease-in-out"
       >
         {selectedImage ? (
-          <img
-            src={URL.createObjectURL(selectedImage)}
-            alt="Selected"
-            className="h-full w-full object-cover rounded-xl"
-          />
+          <div className="h-full">
+            <img
+              src={URL.createObjectURL(selectedImage)}
+              alt="Selected"
+              className="h-full w-full object-cover rounded-xl mb-3"
+            />
+            <button className="px-3 py-2 bg-slate-600 w-full rounded-lg hover:bg-slate-500 transition-colors">Delete Image</button>
+          </div>
         ) : (
           <BiImage size={48} />
         )}
@@ -68,6 +71,12 @@ export const CreateProjectForm = () => {
           className="h-11 bg-emerald-600 hover:bg-emerald-700 rounded-lg transition duration-300 ease-in-out"
         >
           Save
+        </button>
+        <button
+          type="button"
+          className="h-11 bg-transparent border-red-700 border-[1px] hover:bg-red-700 rounded-lg transition duration-300 ease-in-out"
+        >
+          Delete project
         </button>
       </div>
     </form>

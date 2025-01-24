@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { ReactNode } from "react";
 import { links } from "./constants";
+import { BiLogOut } from "react-icons/bi";
 
 export const AdminLayout = ({ children }: { children: ReactNode }) => {
   const router = useRouter();
@@ -17,10 +18,14 @@ export const AdminLayout = ({ children }: { children: ReactNode }) => {
               router.pathname === link.href ? "bg-slate-700" : ""
             }`}
           >
-            {link.label}
+            <div className="flex items-center gap-2">
+              {<link.icon />}
+              {link.label}
+            </div>
           </Link>
         ))}
-        <button className="text-start w-full px-3 py-2 rounded-xl hover:bg-slate-700">
+        <button className="flex items-center gap-2 text-start w-full px-3 py-2 rounded-xl hover:bg-slate-700">
+          <BiLogOut />
           Logout
         </button>
       </aside>

@@ -25,20 +25,20 @@ export default function Home() {
           clean code (SOLID, KISS, DRY) and use modern architectural approaches,
           including REST API and client-server architecture. This allows for
           scalable and easily maintainable solutions to build products that
-          solve real user problems.
-          knowledge programming. In development, I adhere to the principles of
-          clean code (SOLID, KISS, DRY) and use modern architectural approaches,
-          including REST API and client-server architecture. This allows for
-          scalable and easily maintainable solutions to build products that
-          solve real user problems.
+          solve real user problems. knowledge programming. In development, I
+          adhere to the principles of clean code (SOLID, KISS, DRY) and use
+          modern architectural approaches, including REST API and client-server
+          architecture. This allows for scalable and easily maintainable
+          solutions to build products that solve real user problems.
         </section>
         <section id="education">
           <div className="flex items-center gap-2 my-8">
             <span>EDUCATION</span>
             <div className="h-[1px] w-full bg-gray-700"></div>
           </div>
-          {[...Array(1)].map(() => (
+          {[...Array(1)].map((_, i) => (
             <Education
+              key={i}
               years="2023-2027"
               name="Oles Honchar Dnipro National University"
               specialization="Computer engineering"
@@ -64,8 +64,8 @@ export default function Home() {
             data-section="projects"
             id="projects"
           >
-            {[...Array(6)].map(() => (
-              <Project />
+            {[...Array(6)].map((_, i) => (
+              <Project key={i} />
             ))}
           </div>
         </section>
