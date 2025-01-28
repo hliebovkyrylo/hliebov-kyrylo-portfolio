@@ -24,4 +24,18 @@ export class EducationService {
       }
     }
   }
+
+  async deleteEducation(id: string) {
+    try {
+      return prisma.education.delete({
+        where: {
+          id: id,
+        },
+      });
+    } catch (error: any) {
+      if (error.code === "P2025") {
+        throw new NotFoundError("Education not found");
+      }
+    }
+  }
 }
