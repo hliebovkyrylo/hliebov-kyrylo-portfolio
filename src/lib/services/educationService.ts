@@ -38,4 +38,8 @@ export class EducationService {
       }
     }
   }
+
+  async getEducations() {
+    return prisma.education.findMany();
+  }
 }
