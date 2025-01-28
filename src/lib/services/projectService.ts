@@ -48,4 +48,8 @@ export class ProjectService {
       }
     }
   }
+
+  async getProjects() {
+    return prisma.project.findMany();
+  }
 }
