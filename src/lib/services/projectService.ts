@@ -34,4 +34,18 @@ export class ProjectService {
       data: data,
     });
   }
+
+  async deleteProject(id: string) {
+    try {
+      return prisma.project.delete({
+        where: {
+          id: id,
+        },
+      });
+    } catch (error: any) {
+      if (error.code === "P2025") {
+        throw new NotFoundError("Project not found");
+      }
+    }
+  }
 }
