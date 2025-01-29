@@ -14,4 +14,8 @@ export class ImageService {
       folder: "portfolio",
     });
   }
+
+  async deleteImage(publicId: string) {
+    return cloudinary.v2.uploader.destroy(publicId);
+  }
 }
