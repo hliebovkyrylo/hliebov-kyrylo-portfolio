@@ -1,3 +1,4 @@
+import { Prisma } from "@prisma/client";
 import { UserDTO } from "../dtos/user";
 import { NotFoundError } from "../errors";
 import prisma from "../utils/db";
@@ -28,3 +29,7 @@ export class UserService {
     return new UserDTO(user);
   }
 }
+
+export type GetUserResult = Prisma.PromiseReturnType<
+  UserService["getUserByEmail"]
+>;

@@ -2,6 +2,7 @@ import { SignInSchema } from "@/schemas/signInSchema";
 import prisma from "../utils/db";
 import { createAccessToken } from "../utils/jwt";
 import { ConflictError } from "../errors";
+import { Prisma } from "@prisma/client";
 
 export class AuthService {
   async signIn(credentials: SignInSchema) {
@@ -16,3 +17,5 @@ export class AuthService {
     return createAccessToken(user.id);
   }
 }
+
+export type SignInResult = Prisma.PromiseReturnType<AuthService["signIn"]>;
