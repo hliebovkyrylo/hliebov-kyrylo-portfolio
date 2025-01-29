@@ -1,9 +1,10 @@
+import { authMiddleware } from "@/lib/middleware/authMiddleware";
 import { EducationService } from "@/lib/services/educationService";
 import { errorResponse } from "@/lib/utils/apiResponse";
 import { createEducationSchema } from "@/schemas/createEducationSchema";
 import { NextApiRequest, NextApiResponse } from "next/types";
 
-export default async function handler(
+export default authMiddleware(async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
@@ -26,4 +27,4 @@ export default async function handler(
   } else {
     return res.status(405).end(errorResponse("Method not allowed", 405));
   }
-}
+});

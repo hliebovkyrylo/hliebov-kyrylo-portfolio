@@ -1,8 +1,9 @@
+import { authMiddleware } from "@/lib/middleware/authMiddleware";
 import { ProjectService } from "@/lib/services/projectService";
 import { errorResponse, successResponse } from "@/lib/utils/apiResponse";
 import { NextApiRequest, NextApiResponse } from "next/types";
 
-export default async function handler(
+export default authMiddleware(async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
@@ -23,4 +24,4 @@ export default async function handler(
   } else {
     return res.status(405).json(errorResponse("Method not allowed", 405));
   }
-}
+});
