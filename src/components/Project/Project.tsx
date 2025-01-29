@@ -2,36 +2,31 @@ import Image from "next/image";
 import { Skill } from "./components/Skill";
 import Link from "next/link";
 import { BiLinkExternal } from "react-icons/bi";
+import { Project as ProjectType } from "@prisma/client";
 
-export const Project = () => {
+export const Project = ({ project }: { project: ProjectType }) => {
+  const skillsArray = project.tags.split(",");
+
   return (
     <div className="flex gap-3 bg-slate-800 p-3 rounded-xl opacity-30 hover:opacity-100 transition duration-500 ease-in-out">
       <Image
-        src={"/photo.png"}
-        alt="asdf"
+        src={project.imageUrl}
+        alt={project.name}
         width={128}
         height={128}
         className="w-32 h-32 object-cover rounded-lg"
       />
       <div>
         <div className="flex justify-between items-center">
-          <p className="font-bold text-lg">Culinarybook</p>
-          <Link href={"/sdfg"}>
+          <p className="font-bold text-lg">{project.name}</p>
+          <Link href={project.url}>
             <BiLinkExternal />
           </Link>
         </div>
-        <p className="my-3">
-          A social network for recipes that allows users to receive personalized
-          recommendations based on their preferences. In this project, I am
-          fully responsible for developing the frontend, backend and providing
-          SEO optimization to improve the visibility of the application in
-          search engines. I paid special attention to the localization of the
-          application to provide support for multiple languages ​​​​for users
-          from different countries.
-        </p>
+        <p className="my-3">{project.description}</p>
         <div className="flex gap-2">
-          {[...Array(5)].map((_, index) => (
-            <Skill key={index} name="React" />
+          {skillsArray.map((skill, index) => (
+            <Skill key={index} name={skill} />
           ))}
         </div>
       </div>

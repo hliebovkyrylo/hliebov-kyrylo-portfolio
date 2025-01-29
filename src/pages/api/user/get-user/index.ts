@@ -1,6 +1,6 @@
 import { NotFoundError } from "@/lib/errors";
 import { UserService } from "@/lib/services/userService";
-import { errorResponse } from "@/lib/utils/apiResponse";
+import { errorResponse, successResponse } from "@/lib/utils/apiResponse";
 import { NextApiRequest, NextApiResponse } from "next";
 
 const USER_EMAIL = process.env.USER_EMAIL as string;
@@ -14,7 +14,7 @@ export default async function handler(
   try {
     if (req.method === "GET") {
       const user = await userService.getUserByEmail(USER_EMAIL);
-      return res.status(200).json(user);
+      return res.status(200).json(successResponse(user));
     } else {
       return res.status(405).json(errorResponse("Method not allowed", 405));
     }
