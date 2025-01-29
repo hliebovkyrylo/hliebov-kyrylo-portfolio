@@ -63,4 +63,9 @@ export const api = {
   getAllProjects: () => {
     return axios.get<SuccessResponse<Project[]>>(endpoints.getAllProjects());
   },
+  getProjectById: (projectId: string) => {
+    return axios.get<SuccessResponse<Project>>(
+      endpoints.getProjectById(projectId)
+    );
+  },
 };

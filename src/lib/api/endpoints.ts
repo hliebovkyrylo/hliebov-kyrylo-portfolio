@@ -12,4 +12,5 @@ export const endpoints = {
   updateProject: (projectId: string) => `/api/project/${projectId}/update`,
   deleteProject: (projectId: string) => `/api/project/${projectId}/delete`,
   getAllProjects: () => `/api/project/get-all`,
+  getProjectById: (projectId: string) => `/api/project/${projectId}`,
 };
