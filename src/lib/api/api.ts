@@ -6,10 +6,11 @@ import axios from "axios";
 import { UpdateUserInput } from "@/schemas/updateUserSchema";
 import { Education, Project } from "@prisma/client";
 import { GetUserResult } from "../services/userService";
+import { SignInFormData } from "@/components/auth/SignInForm/schemas/signInSchema";
 
 export const api = {
-  signIn: () => {
-    return axios.post<SuccessResponse<SignInResult>>(endpoints.signIn());
+  signIn: (data: SignInFormData) => {
+    return axios.post<SuccessResponse<SignInResult>>(endpoints.signIn(), data);
   },
   createEducation: (data: CreateEducationInput) => {
     return axios.post<SuccessResponse<Education>>(

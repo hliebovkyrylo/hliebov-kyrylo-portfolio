@@ -6,4 +6,4 @@ export default function SignIn() {
       <SignInForm />
     </div>
   );
-};
+}
