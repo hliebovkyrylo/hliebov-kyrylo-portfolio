@@ -52,4 +52,16 @@ export class ProjectService {
   async getProjects() {
     return prisma.project.findMany();
   }
+
+  async getProjectById(id: string) {
+    try {
+      return prisma.project.findUnique({
+        where: { id },
+      });
+    } catch (error: any) {
+      if (error.code === "P2025") {
+        throw new NotFoundError("Project not found");
+      }
+    }
+  }
 }
