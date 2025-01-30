@@ -13,4 +13,6 @@ export const endpoints = {
   deleteProject: (projectId: string) => `/api/project/${projectId}/delete`,
   getAllProjects: () => `/api/project/get-all`,
   getProjectById: (projectId: string) => `/api/project/${projectId}`,
+  uploadImage: () => `/api/image/upload`,
+  deleteImage: (publicId: string) => `/api/image/${publicId}/delete`,
 };

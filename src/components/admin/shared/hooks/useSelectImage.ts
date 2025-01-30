@@ -2,7 +2,6 @@ import { useState } from "react";
 
 export const useSelectImage = () => {
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
-  const [tags, setTags] = useState<string[]>([]);
 
   const handleFileInputClick = () => {
     const fileInput = document.getElementById("file-input");
@@ -16,8 +15,6 @@ export const useSelectImage = () => {
 
   return {
     selectedImage,
-    tags,
-    setTags,
     handleFileChange,
     handleFileInputClick,
   };

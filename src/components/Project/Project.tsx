@@ -19,7 +19,7 @@ export const Project = ({ project }: { project: ProjectType }) => {
       <div>
         <div className="flex justify-between items-center">
           <p className="font-bold text-lg">{project.name}</p>
-          <Link href={project.url}>
+          <Link href={project.link}>
             <BiLinkExternal />
           </Link>
         </div>

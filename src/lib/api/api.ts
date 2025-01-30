@@ -7,6 +7,7 @@ import { UpdateUserInput } from "@/schemas/updateUserSchema";
 import { Education, Project } from "@prisma/client";
 import { GetUserResult } from "../services/userService";
 import { SignInFormData } from "@/components/auth/SignInForm/schemas/signInSchema";
+import { CreateProjectInput } from "@/schemas/createProjectSchema";
 
 export const api = {
   signIn: (data: SignInFormData) => {
@@ -43,7 +44,7 @@ export const api = {
       data
     );
   },
-  createProject: (data: CreateEducationInput) => {
+  createProject: (data: CreateProjectInput) => {
     return axios.post<SuccessResponse<Project>>(
       endpoints.createProject(),
       data
@@ -66,6 +67,14 @@ export const api = {
   getProjectById: (projectId: string) => {
     return axios.get<SuccessResponse<Project>>(
       endpoints.getProjectById(projectId)
+    );
+  },
+  uploadImage: (image: { image: string }) => {
+    return axios.post<SuccessResponse<string>>(endpoints.uploadImage(), image);
+  },
+  deleteImage: (publicId: string) => {
+    return axios.delete<SuccessResponse<string>>(
+      endpoints.deleteImage(publicId)
     );
   },
 };

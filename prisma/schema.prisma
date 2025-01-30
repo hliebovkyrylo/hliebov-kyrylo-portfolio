@@ -30,6 +30,6 @@ model Project {
   name        String
   imageUrl    String
   description String
-  url         String
+  link        String
   tags        String
 }

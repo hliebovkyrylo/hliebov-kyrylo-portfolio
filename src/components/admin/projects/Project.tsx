@@ -11,7 +11,7 @@ export const Project = ({ id, name, imageUrl }: ProjectProps) => {
   return (
     <Link
       href={`/admin/update-project/${id}`}
-      className="bg-slate-800 rounded-xl hover:bg-slate-700 transition duration-500 ease-in-out"
+      className="bg-slate-800 rounded-xl hover:bg-slate-700 transition duration-500 ease-in-out overflow-hidden"
     >
       <Image
         src={imageUrl}
