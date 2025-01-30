@@ -8,7 +8,7 @@ export const Project = ({ project }: { project: ProjectType }) => {
   const skillsArray = project.tags.split(",");
 
   return (
-    <div className="flex gap-3 bg-slate-800 p-3 rounded-xl opacity-30 hover:opacity-100 transition duration-500 ease-in-out">
+    <div className="flex w-full gap-3 bg-slate-800 p-3 rounded-xl opacity-30 hover:opacity-100 transition duration-500 ease-in-out">
       <Image
         src={project.imageUrl}
         alt={project.name}
@@ -16,7 +16,7 @@ export const Project = ({ project }: { project: ProjectType }) => {
         height={128}
         className="w-32 h-32 object-cover rounded-lg"
       />
-      <div>
+      <div className="w-full">
         <div className="flex justify-between items-center">
           <p className="font-bold text-lg">{project.name}</p>
           <Link href={project.link}>
