@@ -8,6 +8,7 @@ import { Education, Project } from "@prisma/client";
 import { GetUserResult } from "../services/userService";
 import { SignInFormData } from "@/components/auth/SignInForm/schemas/signInSchema";
 import { CreateProjectInput } from "@/schemas/createProjectSchema";
+import { UpdateProjectInput } from "@/schemas/updateProjectSchema";
 
 export const api = {
   signIn: (data: SignInFormData) => {
@@ -50,7 +51,7 @@ export const api = {
       data
     );
   },
-  updateProject: (projectId: string, data: CreateEducationInput) => {
+  updateProject: (projectId: string, data: UpdateProjectInput) => {
     return axios.put<SuccessResponse<Project>>(
       endpoints.updateProject(projectId),
       data

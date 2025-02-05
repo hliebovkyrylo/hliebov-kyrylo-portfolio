@@ -38,7 +38,6 @@ export const CreateProjectForm = () => {
     },
   });
 
-  console.log(errors);
   const onSubmit = handleSubmit(async (data) => {
     if (selectedImage) {
       const base64Image = await convertToBase64(selectedImage);

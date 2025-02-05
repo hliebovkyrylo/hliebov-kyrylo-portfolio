@@ -11,12 +11,13 @@ export default authMiddleware(async function handler(
 
   if (req.method === "DELETE") {
     try {
-      const { publicId } = req.body;
+      const { publicId } = req.query;
 
       await imageService.deleteImage(publicId as string);
 
       res.status(200).json(successResponse("Image deleted successfully"));
     } catch (error) {
+      console.log(error);
       res.status(500).json(errorResponse("Internal Server Error", 500));
     }
   } else {

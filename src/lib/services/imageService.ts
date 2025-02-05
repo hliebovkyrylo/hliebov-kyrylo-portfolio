@@ -10,9 +10,7 @@ export class ImageService {
   }
 
   async uploadImage(image: string) {
-    return cloudinary.v2.uploader.upload(image, {
-      folder: "portfolio",
-    });
+    return cloudinary.v2.uploader.upload(image);
   }
 
   async deleteImage(publicId: string) {

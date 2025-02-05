@@ -17,5 +17,6 @@ export const useSelectImage = () => {
     selectedImage,
     handleFileChange,
     handleFileInputClick,
+    setSelectedImage,
   };
 };

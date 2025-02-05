@@ -11,6 +11,8 @@ export const TagsInput = ({ tags, setTags }: TagsInputProps) => {
 
   const handleAddTag = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && inputValue.trim()) {
+      e.preventDefault();
+
       setTags([...tags, inputValue.trim()]);
       setInputValue("");
     } else if (e.key === "Backspace" && !inputValue.trim() && tags.length > 0) {
