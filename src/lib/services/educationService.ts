@@ -42,4 +42,18 @@ export class EducationService {
   async getEducations() {
     return prisma.education.findMany();
   }
+
+  async getEducationById(educationId: string) {
+    try {
+      return prisma.education.findUnique({
+        where: {
+          id: educationId,
+        },
+      });
+    } catch (error: any) {
+      if (error.code === "P2025") {
+        throw new NotFoundError("Education not found");
+      }
+    }
+  }
 }

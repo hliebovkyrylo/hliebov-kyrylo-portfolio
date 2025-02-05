@@ -9,6 +9,7 @@ import { GetUserResult } from "../services/userService";
 import { SignInFormData } from "@/components/auth/SignInForm/schemas/signInSchema";
 import { CreateProjectInput } from "@/schemas/createProjectSchema";
 import { UpdateProjectInput } from "@/schemas/updateProjectSchema";
+import { UpdateEducationInput } from "@/schemas/updateEducationSchema";
 
 export const api = {
   signIn: (data: SignInFormData) => {
@@ -20,7 +21,7 @@ export const api = {
       data
     );
   },
-  updateEducation: (educationId: string, data: CreateEducationInput) => {
+  updateEducation: (educationId: string, data: UpdateEducationInput) => {
     return axios.put<SuccessResponse<Education>>(
       endpoints.updateEducation(educationId),
       data
@@ -34,6 +35,11 @@ export const api = {
   getAllEducations: () => {
     return axios.get<SuccessResponse<Education[]>>(
       endpoints.getAllEducations()
+    );
+  },
+  getEducationById: (educationId: string) => {
+    return axios.get<SuccessResponse<Education>>(
+      endpoints.getEducationById(educationId)
     );
   },
   getUser: () => {

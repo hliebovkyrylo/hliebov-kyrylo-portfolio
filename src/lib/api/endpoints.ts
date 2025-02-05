@@ -6,6 +6,7 @@ export const endpoints = {
   deleteEducation: (educationId: string) =>
     `/api/education/${educationId}/delete`,
   getAllEducations: () => `/api/education/get-all`,
+  getEducationById: (educationId: string) => `/api/education/${educationId}`,
   getUser: () => `/api/user/get-user`,
   updateUser: () => `/api/user/update-info`,
   createProject: () => `/api/project/create`,
