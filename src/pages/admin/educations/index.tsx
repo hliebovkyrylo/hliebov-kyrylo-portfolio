@@ -1,18 +1,29 @@
 import { Education } from "@/components/admin";
 import { AdminLayout } from "@/components/Layout";
+import { api } from "@/lib/api/api";
+import { endpoints } from "@/lib/api/endpoints";
+import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { BiPlus } from "react-icons/bi";
 
 export default function Educations() {
+  const { data: educations, isLoading: isEducationsLoading } = useQuery({
+    queryKey: [endpoints.getAllEducations],
+    queryFn: () => api.getAllEducations(),
+    select: (data) => data.data.data,
+  });
+
+  if (isEducationsLoading) return <div>Loading...</div>;
+
   return (
     <AdminLayout>
       <div className="grid grid-cols-4 gap-6">
-        {[...Array(1)].map((_, i) => (
+        {educations?.map((education) => (
           <Education
-            key={i}
-            id={(i + 1).toString()}
-            name="DNU"
-            specialization="Computer engineering"
+            key={education.id}
+            id={education.id}
+            name={education.name}
+            specialization={education.specialization}
           />
         ))}
         <Link
