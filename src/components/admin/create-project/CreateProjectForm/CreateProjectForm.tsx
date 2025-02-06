@@ -17,12 +17,7 @@ export const CreateProjectForm = () => {
   const [tags, setTags] = useState<string[]>([]);
   const { handleFileChange, handleFileInputClick, selectedImage } =
     useSelectImage();
-  const {
-    handleSubmit,
-    register,
-    setValue,
-    formState: { errors },
-  } = useForm<CreateProjectInput>();
+  const { handleSubmit, register, setValue } = useForm<CreateProjectInput>();
 
   const uploadImageMutation = useMutation({
     mutationFn: api.uploadImage,
@@ -35,6 +30,9 @@ export const CreateProjectForm = () => {
     mutationFn: api.createProject,
     onError: (response: AxiosError<ErrorResponse>) => {
       setError(response.response?.data.error_message || null);
+    },
+    onSuccess: () => {
+      router.push("/admin/projects");
     },
   });
 
@@ -56,8 +54,6 @@ export const CreateProjectForm = () => {
         imageUrl,
         tags: tagsString,
       });
-
-      await router.push("/admin/projects");
     } else {
       setError("Please, select image");
     }

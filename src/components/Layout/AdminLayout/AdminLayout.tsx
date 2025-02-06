@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import { links } from "./constants";
 import { BiLogOut } from "react-icons/bi";
 import cookies from "js-cookie";
@@ -9,8 +9,13 @@ export const AdminLayout = ({ children }: { children: ReactNode }) => {
   const router = useRouter();
   const accessToken = cookies.get("accessToken");
 
+  useEffect(() => {
+    if (!accessToken) {
+      router.push("/sign-in");
+    }
+  }, [accessToken, router]);
+
   if (!accessToken) {
-    router.push("/sign-in");
     return null;
   }
 
