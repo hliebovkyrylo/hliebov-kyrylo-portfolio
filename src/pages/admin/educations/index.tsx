@@ -1,5 +1,6 @@
 import { Education } from "@/components/admin";
 import { AdminLayout } from "@/components/Layout";
+import { Loader } from "@/components/Loader";
 import { api } from "@/lib/api/api";
 import { endpoints } from "@/lib/api/endpoints";
 import { useQuery } from "@tanstack/react-query";
@@ -13,7 +14,7 @@ export default function Educations() {
     select: (data) => data.data.data,
   });
 
-  if (isEducationsLoading) return <div>Loading...</div>;
+  if (isEducationsLoading) return <Loader />;
 
   return (
     <AdminLayout>

@@ -1,5 +1,6 @@
 import { Education } from "@/components/Education";
 import { Layout } from "@/components/Layout";
+import { Loader } from "@/components/Loader";
 import { Project } from "@/components/Project";
 import { api } from "@/lib/api/api";
 import { endpoints } from "@/lib/api/endpoints";
@@ -26,7 +27,7 @@ export default function Home() {
   });
 
   if (isLoadingUser || isLoadingEducations || isLoadingProjects)
-    return <div>Loading...</div>;
+    return <Loader />;
 
   return (
     <>

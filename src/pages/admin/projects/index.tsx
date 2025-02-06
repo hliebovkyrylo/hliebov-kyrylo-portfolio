@@ -1,5 +1,6 @@
 import { Project } from "@/components/admin";
 import { AdminLayout } from "@/components/Layout";
+import { Loader } from "@/components/Loader";
 import { api } from "@/lib/api/api";
 import { endpoints } from "@/lib/api/endpoints";
 import { useQuery } from "@tanstack/react-query";
@@ -13,7 +14,7 @@ export default function Projects() {
     select: (data) => data.data.data,
   });
 
-  if (isLoadingProjects) return <div>Loading...</div>;
+  if (isLoadingProjects) return <Loader />;
 
   return (
     <AdminLayout>

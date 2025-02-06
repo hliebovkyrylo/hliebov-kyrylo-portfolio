@@ -1,5 +1,6 @@
 import { UpdateProjectForm } from "@/components/admin";
 import { AdminLayout } from "@/components/Layout";
+import { Loader } from "@/components/Loader";
 import { api } from "@/lib/api/api";
 import { endpoints } from "@/lib/api/endpoints";
 import { useQuery } from "@tanstack/react-query";
@@ -15,7 +16,7 @@ export default function UpdateProject() {
     select: (data) => data.data.data,
   });
 
-  if (isLoadingProject) return <div>Loading...</div>;
+  if (isLoadingProject) return <Loader />;
 
   return (
     <AdminLayout>

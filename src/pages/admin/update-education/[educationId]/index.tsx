@@ -1,5 +1,6 @@
 import { UpdateEducationForm } from "@/components/admin";
 import { AdminLayout } from "@/components/Layout";
+import { Loader } from "@/components/Loader";
 import { api } from "@/lib/api/api";
 import { endpoints } from "@/lib/api/endpoints";
 import { useQuery } from "@tanstack/react-query";
@@ -15,7 +16,7 @@ const UpdateEducation = () => {
     select: (data) => data.data.data,
   });
 
-  if (isEducationLoading) return <div>Loading...</div>;
+  if (isEducationLoading) return <Loader />;
 
   return (
     <AdminLayout>
