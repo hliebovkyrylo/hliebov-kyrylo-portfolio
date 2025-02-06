@@ -30,7 +30,7 @@ export const InfoSidebar = ({
   const activeSection = useActiveSection();
   
   return (
-    <aside className="sticky top-0 flex flex-col justify-between h-screen py-6">
+    <aside className="sticky top-0 flex flex-col justify-between h-screen py-6 max-lg:static max-lg:block max-lg:h-min max-lg:p-6">
       <div className="flex flex-col w-56">
         <h1 className="text-3xl font-bold">{name}</h1>
         <h2 className="text-lg">{jobTitle}</h2>
@@ -38,7 +38,7 @@ export const InfoSidebar = ({
           {description}
         </p>
       </div>
-      <div className="flex gap-1 flex-col">
+      <div className="flex gap-1 flex-col max-lg:hidden">
         <SectionLink
           sectionName="ABOUT"
           isCurrent={activeSection === "about"}

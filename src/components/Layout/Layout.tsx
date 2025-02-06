@@ -10,7 +10,7 @@ interface LayoutProps {
 export const Layout = ({ children, user }: LayoutProps) => {
   return (
     <div className="flex justify-center inset-0 min-h-screen w-full">
-      <main className="w-full max-w-[1000px] flex gap-6">
+      <main className="w-full max-w-[1000px] flex gap-6 max-lg:block">
         <InfoSidebar
           name={user?.name || "Kyrylo Hliebov"}
           jobTitle={user?.position || "Full-Stack Developer"}

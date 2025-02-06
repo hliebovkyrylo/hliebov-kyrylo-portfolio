@@ -5,7 +5,7 @@ export const Cursor = () => {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.pageX, y: e.pageY });
+      setPosition({ x: e.clientX, y: e.clientY });
     };
 
     document.addEventListener("mousemove", handleMouseMove);
@@ -17,10 +17,11 @@ export const Cursor = () => {
 
   return (
     <div
-      className="absolute w-14 h-14 bg-white rounded-full blur-3xl pointer-events-none"
+      className="fixed w-14 h-14 bg-white rounded-full blur-3xl pointer-events-none max-lg:hidden"
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
+        transform: "translate(-50%, -50%)",
       }}
     />
   );

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import { links } from "./constants";
 import { BiLogOut } from "react-icons/bi";
 import cookies from "js-cookie";
