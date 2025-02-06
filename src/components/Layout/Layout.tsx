@@ -1,11 +1,30 @@
 import { ReactNode } from "react";
-import { Header } from "./components";
+import { InfoSidebar } from "./components/InfoSidebar";
+import { GetUserResult } from "@/lib/services/userService";
 
-export const Layout = ({ children }: { children: ReactNode }) => {
+interface LayoutProps {
+  children: ReactNode;
+  user?: GetUserResult;
+}
+
+export const Layout = ({ children, user }: LayoutProps) => {
   return (
-    <main className="w-full max-w-[900px] p-12">
-      <Header />
-      {children}
-    </main>
+    <div className="flex justify-center inset-0 min-h-screen w-full">
+      <main className="w-full max-w-[1000px] flex gap-6 max-lg:block">
+        <InfoSidebar
+          name={user?.name || "Kyrylo Hliebov"}
+          jobTitle={user?.position || "Full-Stack Developer"}
+          description={
+            user?.smallDescription ||
+            "I can develop hight-performance web and android apps"
+          }
+          instHref="https://instagram.com/xenoniiii/"
+          tgHref="https://t.me/kyrylohliebov"
+          linkedInHref="https://www.linkedin.com/in/kyrylo-hliebov-a5055926a/"
+          gitHubHref="https://github.com/hliebovkyrylo"
+        />
+        <div className="p-6">{children}</div>
+      </main>
+    </div>
   );
 };
