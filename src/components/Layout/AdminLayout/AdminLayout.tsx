@@ -1,11 +1,18 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import { links } from "./constants";
 import { BiLogOut } from "react-icons/bi";
+import cookies from "js-cookie";
 
 export const AdminLayout = ({ children }: { children: ReactNode }) => {
   const router = useRouter();
+  const accessToken = cookies.get("accessToken");
+
+  if (!accessToken) {
+    router.push("/sign-in");
+    return null;
+  }
 
   return (
     <div className="flex gap-6">
@@ -24,7 +31,13 @@ export const AdminLayout = ({ children }: { children: ReactNode }) => {
             </div>
           </Link>
         ))}
-        <button className="flex items-center gap-2 text-start w-full px-3 py-2 rounded-xl hover:bg-slate-700">
+        <button
+          onClick={() => {
+            cookies.remove("accessToken");
+            router.push("/");
+          }}
+          className="flex items-center gap-2 text-start w-full px-3 py-2 rounded-xl hover:bg-slate-700"
+        >
           <BiLogOut />
           Logout
         </button>

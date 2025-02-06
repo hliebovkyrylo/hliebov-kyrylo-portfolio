@@ -18,14 +18,15 @@ export default function Educations() {
   return (
     <AdminLayout>
       <div className="grid grid-cols-4 gap-6">
-        {educations?.map((education) => (
-          <Education
-            key={education.id}
-            id={education.id}
-            name={education.name}
-            specialization={education.specialization}
-          />
-        ))}
+        {educations &&
+          educations.map((education) => (
+            <Education
+              key={education.id}
+              id={education.id}
+              name={education.name}
+              specialization={education.specialization}
+            />
+          ))}
         <Link
           href={"/admin/create-education"}
           className="bg-slate-800 hover:bg-slate-700 transition duration-500 ease-in-out rounded-xl flex justify-center items-center"

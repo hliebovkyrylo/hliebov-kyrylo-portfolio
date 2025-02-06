@@ -38,7 +38,7 @@ export default function Home() {
           content="This is website with info about me :)"
         />
       </Head>
-      <Layout>
+      <Layout user={user}>
         <section id="about">{user?.description}</section>
         <section id="education">
           <div className="flex items-center gap-2 my-8">

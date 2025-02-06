@@ -24,7 +24,7 @@ export const Project = ({ project }: { project: ProjectType }) => {
           </Link>
         </div>
         <p className="my-3">{project.description}</p>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           {skillsArray.map((skill, index) => (
             <Skill key={index} name={skill} />
           ))}
