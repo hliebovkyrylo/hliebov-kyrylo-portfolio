@@ -18,18 +18,20 @@ model User {
 }
 
 model Education {
-  id             String @id @default(auto()) @map("_id") @db.ObjectId
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
   name           String
   years          String
   specialization String
   description    String
+  createdAt      DateTime @default(now())
 }
 
 model Project {
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
   name        String
   imageUrl    String
   description String
   link        String
   tags        String
+  createdAt   DateTime @default(now())
 }

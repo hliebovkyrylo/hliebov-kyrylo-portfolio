@@ -44,7 +44,11 @@ export class ProjectService {
   }
 
   async getProjects() {
-    return prisma.project.findMany();
+    return prisma.project.findMany({
+      orderBy: {
+        createdAt: "desc",
+      },
+    });
   }
 
   async getProjectById(id: string) {

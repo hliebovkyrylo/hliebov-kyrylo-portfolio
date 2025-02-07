@@ -40,7 +40,11 @@ export class EducationService {
   }
 
   async getEducations() {
-    return prisma.education.findMany();
+    return prisma.education.findMany({
+      orderBy: {
+        createdAt: "desc",
+      },
+    });
   }
 
   async getEducationById(educationId: string) {
