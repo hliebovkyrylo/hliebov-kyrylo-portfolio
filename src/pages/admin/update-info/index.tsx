@@ -1,9 +1,9 @@
-import { UpdateInfoForm } from "@/components/admin";
-import { AdminLayout } from "@/components/Layout";
-import { Loader } from "@/components/Loader";
-import { api } from "@/lib/api/api";
-import { endpoints } from "@/lib/api/endpoints";
-import { useQuery } from "@tanstack/react-query";
+import { api } from '@/lib/api/api';
+import { endpoints } from '@/lib/api/endpoints';
+import { useQuery } from '@tanstack/react-query';
+import { Loader } from '@/modules/common';
+import { AdminLayout } from '@/modules/layouts';
+import { UpdateInfoForm } from '@/modules/admin';
 
 export default function UpdateInfo() {
   const { data: user, isLoading: isLoadingUser } = useQuery({

@@ -1,11 +1,10 @@
-import { Education } from "@/components/Education";
-import { Layout } from "@/components/Layout";
-import { Loader } from "@/components/Loader";
-import { Project } from "@/components/Project";
-import { api } from "@/lib/api/api";
-import { endpoints } from "@/lib/api/endpoints";
-import { useQuery } from "@tanstack/react-query";
-import Head from "next/head";
+import { api } from '@/lib/api/api';
+import { endpoints } from '@/lib/api/endpoints';
+import { useQuery } from '@tanstack/react-query';
+import Head from 'next/head';
+import { Loader } from '@/modules/common';
+import { MainLayout } from '@/modules/layouts';
+import { Education, Project } from '@/modules/home';
 
 export default function Home() {
   const { data: user, isLoading: isLoadingUser } = useQuery({
@@ -39,7 +38,7 @@ export default function Home() {
           content="This is website with info about me :)"
         />
       </Head>
-      <Layout user={user}>
+      <MainLayout user={user}>
         <section id="about">{user?.description}</section>
         <section id="education">
           <div className="flex items-center gap-2 my-8">
@@ -71,7 +70,7 @@ export default function Home() {
             ))}
           </div>
         </section>
-      </Layout>
+      </MainLayout>
     </>
   );
 }

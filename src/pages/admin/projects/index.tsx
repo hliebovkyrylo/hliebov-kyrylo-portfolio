@@ -1,11 +1,11 @@
-import { Project } from "@/components/admin";
-import { AdminLayout } from "@/components/Layout";
-import { Loader } from "@/components/Loader";
-import { api } from "@/lib/api/api";
-import { endpoints } from "@/lib/api/endpoints";
-import { useQuery } from "@tanstack/react-query";
-import Link from "next/link";
-import { BiPlus } from "react-icons/bi";
+import { api } from '@/lib/api/api';
+import { endpoints } from '@/lib/api/endpoints';
+import { useQuery } from '@tanstack/react-query';
+import Link from 'next/link';
+import { BiPlus } from 'react-icons/bi';
+import { Loader } from '@/modules/common';
+import { AdminLayout } from '@/modules/layouts';
+import { Project } from '@/modules/admin';
 
 export default function Projects() {
   const { data: projects, isLoading: isLoadingProjects } = useQuery({
@@ -28,7 +28,7 @@ export default function Projects() {
           />
         ))}
         <Link
-          href={"/admin/create-project"}
+          href={'/admin/create-project'}
           className="bg-slate-800 hover:bg-slate-700 transition duration-500 ease-in-out rounded-xl flex justify-center items-center"
         >
           <BiPlus size={64} />

@@ -1,5 +1,5 @@
-import { CreateEducationForm } from "@/components/admin";
-import { AdminLayout } from "@/components/Layout";
+import { CreateEducationForm } from '@/modules/admin';
+import { AdminLayout } from '@/modules/layouts';
 
 const CreateEducation = () => {
   return (

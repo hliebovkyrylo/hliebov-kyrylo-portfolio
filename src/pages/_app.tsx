@@ -1,8 +1,8 @@
-import { Cursor } from "@/components/Cursor/Cursor";
-import "@/styles/globals.css";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ThemeProvider } from "next-themes";
-import type { AppProps } from "next/app";
+import '@/styles/globals.css';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ThemeProvider } from 'next-themes';
+import type { AppProps } from 'next/app';
+import { Cursor } from '@/modules/common';
 
 const queryClient = new QueryClient();
 

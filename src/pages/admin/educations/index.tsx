@@ -1,11 +1,11 @@
-import { Education } from "@/components/admin";
-import { AdminLayout } from "@/components/Layout";
-import { Loader } from "@/components/Loader";
-import { api } from "@/lib/api/api";
-import { endpoints } from "@/lib/api/endpoints";
-import { useQuery } from "@tanstack/react-query";
-import Link from "next/link";
-import { BiPlus } from "react-icons/bi";
+import { api } from '@/lib/api/api';
+import { endpoints } from '@/lib/api/endpoints';
+import { useQuery } from '@tanstack/react-query';
+import Link from 'next/link';
+import { BiPlus } from 'react-icons/bi';
+import { Loader } from '@/modules/common';
+import { AdminLayout } from '@/modules/layouts';
+import { Education } from '@/modules/admin';
 
 export default function Educations() {
   const { data: educations, isLoading: isEducationsLoading } = useQuery({
@@ -29,7 +29,7 @@ export default function Educations() {
             />
           ))}
         <Link
-          href={"/admin/create-education"}
+          href={'/admin/create-education'}
           className="bg-slate-800 hover:bg-slate-700 transition duration-500 ease-in-out rounded-xl flex justify-center items-center"
         >
           <BiPlus size={32} />

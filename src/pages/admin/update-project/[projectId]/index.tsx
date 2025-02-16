@@ -1,10 +1,10 @@
-import { UpdateProjectForm } from "@/components/admin";
-import { AdminLayout } from "@/components/Layout";
-import { Loader } from "@/components/Loader";
-import { api } from "@/lib/api/api";
-import { endpoints } from "@/lib/api/endpoints";
-import { useQuery } from "@tanstack/react-query";
-import { useRouter } from "next/router";
+import { api } from '@/lib/api/api';
+import { endpoints } from '@/lib/api/endpoints';
+import { useQuery } from '@tanstack/react-query';
+import { useRouter } from 'next/router';
+import { Loader } from '@/modules/common';
+import { AdminLayout } from '@/modules/layouts';
+import { UpdateProjectForm } from '@/modules/admin';
 
 export default function UpdateProject() {
   const { query } = useRouter();

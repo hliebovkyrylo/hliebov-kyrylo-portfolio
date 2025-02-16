@@ -1,5 +1,5 @@
-import { CreateProjectForm } from "@/components/admin";
-import { AdminLayout } from "@/components/Layout";
+import { CreateProjectForm } from '@/modules/admin';
+import { AdminLayout } from '@/modules/layouts';
 
 export default function CreateProject() {
   return (
