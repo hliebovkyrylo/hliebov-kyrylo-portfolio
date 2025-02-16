@@ -4,7 +4,12 @@ import { useQuery } from '@tanstack/react-query';
 import Head from 'next/head';
 import { Loader } from '@/modules/common';
 import { MainLayout } from '@/modules/layouts';
-import { Education, Project } from '@/modules/home';
+import {
+  Education,
+  EducationSkeleton,
+  Project,
+  ProjectSkeleton,
+} from '@/modules/home';
 
 export default function Home() {
   const { data: user, isLoading: isLoadingUser } = useQuery({
@@ -25,8 +30,7 @@ export default function Home() {
     select: (data) => data.data.data,
   });
 
-  if (isLoadingUser || isLoadingEducations || isLoadingProjects)
-    return <Loader />;
+  if (isLoadingUser) return <Loader />;
 
   return (
     <>
@@ -45,15 +49,19 @@ export default function Home() {
             <span>EDUCATION</span>
             <div className="h-[1px] w-full bg-gray-700"></div>
           </div>
-          {educations?.map((education, i) => (
-            <Education
-              key={i}
-              years={education.years}
-              name={education.name}
-              specialization={education.specialization}
-              description={education.description}
-            />
-          ))}
+          {!isLoadingEducations && educations ? (
+            educations.map((education, i) => (
+              <Education
+                key={i}
+                years={education.years}
+                name={education.name}
+                specialization={education.specialization}
+                description={education.description}
+              />
+            ))
+          ) : (
+            <EducationSkeleton />
+          )}
         </section>
         <section id="projects">
           <div className="flex items-center gap-2 my-8">
@@ -65,9 +73,17 @@ export default function Home() {
             data-section="projects"
             id="projects"
           >
-            {projects?.map((project, i) => (
-              <Project key={i} project={project} />
-            ))}
+            {!isLoadingProjects && projects ? (
+              projects.map((project, i) => (
+                <Project key={i} project={project} />
+              ))
+            ) : (
+              <>
+                {[...Array(6)].map((_, i) => (
+                  <ProjectSkeleton key={i} />
+                ))}
+              </>
+            )}
           </div>
         </section>
       </MainLayout>
